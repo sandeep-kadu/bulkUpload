@@ -1,0 +1,19 @@
+
+Run the Spring Boot application and upload an Excel file using Postman:
+
+URL: POST http://localhost:8080/api/excel/upload
+Body: Form-data with key "file" (upload .xlsx file)
+
+Go to: http://localhost:8080/h2-console
+JDBC URL: jdbc:h2:mem:testdb
+User: sa
+
+SELECT * FROM main_table;
+SELECT * FROM failure_table;
+
+
+Conclusion
+This implementation: ✔ Reads 30k Excel records.
+✔ Validates each record.
+✔ Saves valid records to main_table.
+✔ Saves invalid records to failure_table with error messages.
